@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ControllerApi {
 
-    @Reference(version = "1.0.0")
+    @Reference(check = false)//让依赖检查关闭,可以先启消费者
     ServiceApi serviceApi;
 
     @RequestMapping("/{message}")
