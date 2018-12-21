@@ -9,15 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.csbr</groupId>
-	<artifactId>springbootdubbo</artifactId>
+	<artifactId>provider1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springbootdubbo</name>
-	<description>springboot与Dubbo</description>
-	<modules>
-		<module>provider</module>
-		<module>consumer</module>
-		<module>provider1</module>
-	</modules>
+	<name>provider1</name>
+	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -33,11 +28,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.alibaba.boot</groupId>
-			<artifactId>dubbo-spring-boot-starter</artifactId>
-			<version>0.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba.boot</groupId>
@@ -62,12 +52,6 @@
 			<artifactId>zkclient</artifactId>
 			<version>0.9</version>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.apache.zookeeper</groupId>-->
-			<!--<artifactId>zookeeper</artifactId>-->
-			<!--<version>3.4.9</version>-->
-			<!--<type>pom</type>-->
-		<!--</dependency>-->
 
 	</dependencies>
 
