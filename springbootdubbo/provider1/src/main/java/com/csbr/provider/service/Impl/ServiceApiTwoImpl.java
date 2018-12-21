@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * Created by YangYuFan on 2018/12/21.
  */
 @Component
-@Service(timeout = 1000000,async = true)
+@Service(timeout = 1000000)
 public class ServiceApiTwoImpl implements ServiceApiTwo {
     @Override
     public String sendMessageTwo(String message) {

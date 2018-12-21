@@ -17,10 +17,10 @@ import java.util.concurrent.Future;
 @RestController
 public class ControllerApi {
 
-    @Reference(check = false)//让依赖检查关闭,可以先启消费者
+    @Reference(check = false,async = true)//让依赖检查关闭,可以先启消费者
     ServiceApi serviceApi;
 
-    @Reference
+    @Reference(async = true,cache = "lru")
     ServiceApiTwo serviceApiTwo;
 
     @RequestMapping("/{message}")
