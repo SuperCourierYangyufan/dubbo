@@ -34,7 +34,21 @@
     * 注意
       1. 接口路径一定一定一定一定一定一定一定一定一定一样
       2. 建议接口生成一个新项目install后导入双方
-
+### 异步调用
+	1. service实现类上async = true
+	2. controller
+		```
+			//A调用
+			serviceApi.sendMessage(message);
+			//获得A的Future对象
+			Future<String> sendFutureA = RpcContext.getContext().getFuture();
+			//B调用
+			serviceApiTwo.sendMessageTwo(message);
+			//获得B的Future对象
+			Future<String> sendFutureB = RpcContext.getContext().getFuture();
+			//返回
+			return sendFutureA.get()+sendFutureB.get(); 
+		```
 ### 小贴士
 	1.  @Reference(check = false)//让依赖检查关闭,可以先启消费者
 	2.  @Service(timeout = 5000,loadbalance = "roundrobin") //负载均衡策略
@@ -42,3 +56,4 @@
 		1. dubbo:单连接，长连接，tcp,nio异步传输: 数据包小(数据包小于100k),消费者个数多,常规方式
 		2. RMI: 多连接，短连接，tcp,同步传输: 数据包大小不一样,消费者与提供者相差不大
 		3. Hessian: 多连接，短连接，HTTP,同步传输: 数据包大小不一样,消费者与提供者相差不大
+	4. dubbo默认超时200ms
